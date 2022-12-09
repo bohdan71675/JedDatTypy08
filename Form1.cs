@@ -41,21 +41,24 @@ namespace JedDatTypy08
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int prvocisla = 0;
             for (int i = 0; i < textBox1.Lines.Count(); i++)
             {
                 int cislo = int.Parse(textBox1.Lines[i].ToString());
                 if (JePrvocislo(cislo))
                 {
-                    MessageBox.Show("Obsahuje prvocislo");
-                }
-                else
-                {
-                    MessageBox.Show("Neobsahuje prvocislo");
+                    prvocisla++;
                 }
             }
 
-
+            if (prvocisla >= 1)
+            {
+                MessageBox.Show("Ano, obsahuje prvocislo");
+            }
+            else
+            {
+                MessageBox.Show("Ne, neobsahuje prvocislo");
+            }
 
         }
     }
