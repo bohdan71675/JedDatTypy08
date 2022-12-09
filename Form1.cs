@@ -17,6 +17,7 @@ namespace JedDatTypy08
         {
             InitializeComponent();
         }
+        
 
         public static bool JePrvocislo(int x)
         {
@@ -41,25 +42,23 @@ namespace JedDatTypy08
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int prvocisla = 0;
+            bool obsahuje = false;
             for (int i = 0; i < textBox1.Lines.Count(); i++)
             {
                 int cislo = int.Parse(textBox1.Lines[i].ToString());
-                if (JePrvocislo(cislo))
+                if (JePrvocislo(cislo) && !obsahuje)
                 {
-                    prvocisla++;
+                    obsahuje = true;
                 }
             }
-
-            if (prvocisla >= 1)
+            if (obsahuje)
             {
-                MessageBox.Show("Ano, obsahuje prvocislo");
+                MessageBox.Show("Ano");
             }
             else
             {
-                MessageBox.Show("Ne, neobsahuje prvocislo");
+                MessageBox.Show("Ne");
             }
-
         }
     }
 }
